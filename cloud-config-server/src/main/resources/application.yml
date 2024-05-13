@@ -1,0 +1,24 @@
+server:
+  port: 9296
+
+spring:
+  application:
+    name: CONFIG-SERVER
+
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/c-kiplimo/config-server.git
+          default-label: develop
+          clone-on-start: true
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: eureka-0
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost/eureka/

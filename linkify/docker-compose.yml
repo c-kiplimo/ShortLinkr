@@ -1,0 +1,87 @@
+version: "2"
+services:
+  linkify:
+    image: collins6299/linkify
+    environment:
+      - "TZ=Africa/Nairobi"
+      - JAVA_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremo>
+        -Dcom.sun.management.jmxremote.authenticate=f>
+        -Dcom.sun.management.jmxremote.ssl=false
+        -Djava.net.preferIPv4Stack=true
+        -Dcom.sun.management.jmxremote.rmi.port=9090
+        -Djava.rmi.server.hostname=164.92.70.172
+        -Dlog4j.configuration=file:/configs/log4j.pro>
+        -XX:+UseParallelGC -Xms128M -Xmx2048M
+    volumes:
+      - /logs:/logs
+    ports:
+      - 9090:9090
+    restart: on-failure
+  shortner:
+      image: collins6299/shortner-api
+      environment:
+        - "TZ=Africa/Nairobi"
+        - JAVA_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremo>
+          -Dcom.sun.management.jmxremote.authenticate=f>
+          -Dcom.sun.management.jmxremote.ssl=false
+          -Djava.net.preferIPv4Stack=true
+          -Dcom.sun.management.jmxremote.rmi.port=9091
+          -Djava.rmi.server.hostname=164.92.70.172
+          -Dlog4j.configuration=file:/configs/log4j.pro>
+          -XX:+UseParallelGC -Xms128M -Xmx2048M
+      volumes:
+        - /logs:/logs
+      ports:
+        - 9091:9091
+      restart: on-failure
+  service-registry:
+    image: collins6299/service-registry
+    environment:
+      - "TZ=Africa/Nairobi"
+      - JAVA_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremo>
+        -Dcom.sun.management.jmxremote.authenticate=f>
+        -Dcom.sun.management.jmxremote.ssl=false
+        -Djava.net.preferIPv4Stack=true
+        -Dcom.sun.management.jmxremote.rmi.port=8761
+        -Djava.rmi.server.hostname=164.92.70.172
+        -Dlog4j.configuration=file:/configs/log4j.pro>
+        -XX:+UseParallelGC -Xms128M -Xmx2048M
+    volumes:
+      - /logs:/logs
+    ports:
+      - 8761:8761
+    restart: on-failure
+  cloud-gateway:
+    image: collins6299/cloud-gateway
+    environment:
+      - "TZ=Africa/Nairobi"
+      - JAVA_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremo>
+        -Dcom.sun.management.jmxremote.authenticate=f>
+        -Dcom.sun.management.jmxremote.ssl=false
+        -Djava.net.preferIPv4Stack=true
+        -Dcom.sun.management.jmxremote.rmi.port=9191
+        -Djava.rmi.server.hostname=164.92.70.172
+        -Dlog4j.configuration=file:/configs/log4j.pro>
+        -XX:+UseParallelGC -Xms128M -Xmx2048M
+    volumes:
+      - /logs:/logs
+    ports:
+      - 9191:9191
+    restart: on-failure
+  config-server:
+    image: collins6299/config-server
+    environment:
+      - "TZ=Africa/Nairobi"
+      - JAVA_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremo>
+        -Dcom.sun.management.jmxremote.authenticate=f>
+        -Dcom.sun.management.jmxremote.ssl=false
+        -Djava.net.preferIPv4Stack=true
+        -Dcom.sun.management.jmxremote.rmi.port=9296
+        -Djava.rmi.server.hostname=164.92.70.172
+        -Dlog4j.configuration=file:/configs/log4j.pro>
+        -XX:+UseParallelGC -Xms128M -Xmx2048M
+    volumes:
+      - /logs:/logs
+    ports:
+      - 9296:9296
+    restart: on-failure

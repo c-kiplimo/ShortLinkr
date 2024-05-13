@@ -1,0 +1,125 @@
+<!-- <p>landing-redesign works!</p> -->
+<div class="container">
+    <nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">LINKIFY</a>
+        <div class="social-media order-lg-last">
+            <!-- <p class="mb-0 d-flex">
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+            </p> -->
+            <div class="d-flex" style="gap: 20px">
+                <!-- <button style="gap: 10px;" class="">Login</button>
+                <button style="padding-left: 10px" class="">Get a Quote</button> -->
+                <button class="btn-transparent" routerLink="/login">Login</button>
+                <button class="btn-blue">Get a Quote</button>
+            </div>
+    </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav mx-auto mr-md-3">
+            <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">My Urls</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- END nav -->
+<div class="bdy">
+    <div class="left">
+      <div class="text">
+        <p style="background-color:#f2f2ff; border-radius:25px; color:#9b7bef;  padding: 10px 10px; font-size: smaller; text-align: center;">Let's make with simply one click</p>
+        <h1 style="color: black; font-weight:900;">A simple link <br> but a powerful tool<br> for <span>sms marketing</span></h1>
+      </div>
+
+      <div class="form-cont">
+        <!-- <h1>Hello World</h1> -->
+        <div class="content">
+          <form class="subscription">
+            <input class="add-email" type="text" [(ngModel)]="longUrl" (keyup.enter)="createShortLink()" placeholder="Enter your long URL here">
+            <button class="submit-email" type="button" (click)="openModal(content); createShortLink()" [disabled]="!longUrl">
+              <span class="before-submit">Short Link</span>
+              <!-- <span class="after-submit">Thank you for subscribing!</span> -->
+             </button>
+          </form>
+        </div>
+      </div>
+     <!-- <div class="form-cont">
+        <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+     </div> -->
+      <!-- <div class="form-cont">
+        <form>
+          <div class="form-group">
+            <label for="InputURL"><i class="bi bi-link-45deg"></i><i class="bi bi-link-45deg"></i>Enter your long URL
+              here</label>
+            <input type="email" class="form-control" id="InputURL" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="linkCustom"><i class="bi bi-link-45deg"></i>Customize your link</label>
+            <input type="text" class="form-control"  id="linkCustom">
+          </div>
+        </form>
+        <div class="btn-cont">
+
+        </div>
+
+
+      </div> -->
+      
+    </div>
+    <div class="right">
+      <img src="../../assets/images/undraw_link_shortener_mvf6.svg" alt="LINKIFY URL SHORTENER">
+    </div>
+   
+  </div>
+</div>
+
+<!--Modal component-->
+<div class="modal">
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Your shortened Lin.ke URL:</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+
+    <div class="modal-body">
+      <form>
+        <div class="form-group modal-form">
+
+          <input type="email" class="form-control" id="shortUrl" {{shortUrl}}
+            aria-describedby="emailHelp">
+          <button (click)="copyShortenedLink()" id="cpy">Copy</button>
+          <button id="dot">...</button>
+        </div>
+
+      </form>
+    </div>
+    <div class="btn-cont">
+      <p>My Urls</p>
+      <div class="vl"></div>
+      <button style="padding:10px 10px;">Detailed Stats</button>
+    </div>
+
+  </ng-template>
+</div>

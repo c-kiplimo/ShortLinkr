@@ -1,0 +1,76 @@
+server:
+  port: 9191
+spring:
+  application:
+    name: API-GATEWAY
+
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+      default-filters:
+        - name: Retry
+          args:
+            retries: 3
+            methods: GET,POST
+            series: SERVER_ERROR
+            exceptions: java.io.IOException, java.util.concurrent.TimeoutException
+            backoff:
+              firstBackoff: 50ms
+              maxBackOff: 500ms
+              factor: 2
+              basedOnPreviousValue: false
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/api/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: USER-SERVICE
+                fallbackuri: forward:/userServiceFallBack
+        - id: URLSHORTNER-SERVICE
+          uri: lb://URLSHORTNER-SERVICE
+          predicates:
+            - Path=/shortener/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: URLSHORTNER-SERVICE
+                fallbackuri: forward:/shortnerServiceFallBack
+#  lifecycle:
+#    timeout-per-shutdown-phase: 20s
+#    redis:
+#      connect-timeout: 30s
+#      host: localhost
+#      port: 6379
+#      timeout: 1000ms
+#    session:
+#      store-type: redis
+#      timeout: 10m
+#      redis:
+#        namespace: library:edge
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: eureka-0
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+

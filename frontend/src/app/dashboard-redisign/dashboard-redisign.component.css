@@ -1,0 +1,237 @@
+/* .container {
+  margin: auto 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+} */
+
+/* .left-modal {
+  width: 100vw;
+  margin: 0;
+  border-right: 1px solid black;
+}
+.left-modal ul {
+  list-style: none;
+  margin: 0;
+}
+.left-modal ul li {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-bottom: 5px;
+  width: 8rem;
+}
+.left-modal ul li:active {
+  background-color: rgb(3, 87, 255);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.left-modal .links a {
+  text-decoration: none;
+}
+.left-modal .links a:active {
+  border: 2px solid black;
+  background-color: blue;
+}
+
+.dashboard {
+  width: 86vw;
+  margin: 0;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.logo, .nav {
+  display: inline;
+}
+
+.nav {
+  margin-right: 3rem;
+}
+.nav span {
+  padding: 2rem;
+}
+
+.bdy {
+  display: flex;
+  flex: 2;
+  width: 100%;
+}
+
+.right {
+  border-left: 1px solid black;
+  padding-left: 0.5rem;
+  width: 100%;
+  background-color: whitesmoke;
+}
+
+.right-tile1 {
+  margin-top: 1rem;
+}
+.right-tile1 input[type=text] {
+  width: 25rem;
+  padding: 5px 3px;
+}
+.right-tile1 input[type=submit] {
+  margin-left: -9rem;
+  height: 2.3rem;
+  width: 9rem;
+  background-color: rgb(3, 87, 255);
+  color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.right-tile2 {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  padding-left: 30px;
+  padding-top: 10px;
+  margin-right: 1rem;
+  border-radius: 10px;
+}
+.right-tile2 .ad {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 25rem;
+  height: 15rem;
+  background-color: whitesmoke;
+  margin: 1rem 0rem;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+.right-tile2 .custom-link {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  margin: 0rem 1rem 2rem 0rem;
+  padding: 0.2rem 1rem;
+  border-radius: 8px;
+}
+
+.right-tile3 {
+  border: 2px solid black;
+  margin-top: 4rem;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+.right-tile3 .heading {
+  display: flex;
+  justify-content: space-between;
+}
+.right-tile3 .qr-section {
+  display: flex;
+  justify-content: space-between;
+}
+.right-tile3 .qr-section .qrcode {
+  width: 15rem;
+  height: 15rem;
+  margin-right: 1rem;
+}
+.right-tile3 .qr-section .qr-text {
+  margin-top: 4rem;
+  font-weight: bolder;
+  border: 2px solid black;
+  height: 100px;
+}
+
+.filt {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0rem;
+  margin: 0.5rem;
+  width: 50vw;
+}
+.filt .filter input {
+  margin-left: 0.5rem;
+  margin-right: 0.3rem;
+}
+.filt .filter select {
+  margin-left: 30px;
+  border-radius: 5px;
+}
+
+.stats {
+  display: flex;
+  border: 2px solid whitesmoke;
+  box-shadow: 2px 2px 2px 2px whitesmoke;
+  border-radius: 10px;
+  justify-content: space-around;
+  padding: 1rem 0rem;
+  margin: 1rem 0.5rem;
+}
+.stats .clicks, .stats .channel {
+  display: flex;
+}
+.stats .clicks .info, .stats .channel .info {
+  margin-left: 0.5rem;
+}
+.stats .icon {
+  height: 3rem;
+  width: 3rem;
+  border: 2px solid blue;
+  border-radius: 50%;
+}
+
+.graph-sec {
+  border-bottom: 1px solid black;
+  margin: 1rem 0rem;
+  padding: 2rem;
+}
+.graph-sec #hide-btn {
+  position: absolute;
+  top: 37.5rem;
+  left: 30rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgb(3, 87, 255);
+  height: 2rem;
+  width: 7rem;
+}
+
+#divChart {
+  display: block;
+  width: 400px;
+  height: 400px;
+}
+
+.tile {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0.5rem;
+}
+.tile h2 {
+  font-weight: bold;
+}
+.tile h3 {
+  opacity: 0.7;
+}
+.tile h2, .tile h3 {
+  font-size: large;
+}
+
+.link-stat {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px #f0e8e8;
+  border-radius: 10px;
+  padding: 1rem 0rem;
+  margin: 1rem 0.5rem;
+  padding: 0rem 1rem;
+}
+.link-stat .url {
+  display: flex;
+  justify-content: space-between;
+}
+.link-stat .url h2 {
+  margin-top: 10px;
+}
+.link-stat .url .icons {
+  display: flex;
+}
+.link-stat .url .icons .icon1, .link-stat .url .icons .icon2 {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+.link-stat h3 {
+  opacity: 0.7;
+} */
+/*# sourceMappingURL=dashboard-redisign.component.css.map */

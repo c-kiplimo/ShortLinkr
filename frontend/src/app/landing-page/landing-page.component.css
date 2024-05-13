@@ -1,0 +1,149 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+.land-cont {
+  background-color: #9B7BEF;
+  height: 100vh;
+}
+
+.dash-cont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: inline-block;
+  margin-left: 3rem;
+  position: absolute;
+  top: 44px;
+  width: 129px;
+}
+.logo a {
+  font-weight: bolder;
+  text-decoration: none;
+  color: black;
+  font-size: 32px;
+  font-family: "Montagu Slab";
+  font-weight: 700;
+  font-style: normal;
+  left: 75px;
+}
+
+.nav {
+  display: flex;
+  position: absolute;
+  left: 950px;
+  height: 55px;
+  top: 37px;
+}
+.nav ol li {
+  display: inline-block;
+  padding: 4px 8px;
+  gap: 4px;
+  color: white;
+  font-weight: 600;
+  font-style: normal;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.nav ol li button {
+  border-radius: 20px;
+  border: 2px solid #B785C6;
+  background-color: #EDF4FF;
+  width: 150px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+}
+
+.bdy {
+  display: flex;
+  justify-content: space-around;
+}
+.bdy .left {
+  margin-top: 3rem;
+  width: 30rem;
+}
+.bdy .left .text {
+  font-size: 30px;
+  font-family: "Montagu Slab";
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 200px;
+  left: 60px;
+}
+.bdy .left .text span {
+  color: black;
+}
+.bdy .left input {
+  margin-bottom: 1rem;
+  border: 2px solid #9B7BEF;
+  border-radius: 3rem;
+  box-shadow: 2px 2px 2px #9B7BEF;
+}
+
+.right img {
+  height: 70vh;
+  position: absolute;
+  top: 196px;
+  left: 800px;
+  z-index: 1;
+}
+
+.form-cont {
+  border: 2px;
+  background-color: white;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  position: absolute;
+  width: 500px;
+  top: 400px;
+  left: 55px;
+}
+
+.btn-cont {
+  display: flex;
+  justify-content: space-around;
+}
+.btn-cont button {
+  border-radius: 3rem;
+  letter-spacing: 1px;
+  padding: 0rem 3rem;
+  margin-bottom: 1rem;
+  border: 2px solid #B785C6;
+  background-color: #fff;
+  height: 45px;
+  width: 150px;
+}
+
+/*Modal styling*/
+.modal input {
+  border: 3px solid red;
+}
+
+.modal-form {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.modal-form #cpy {
+  background-color: rgba(183, 133, 255, 0.5);
+  border: none;
+}
+.modal-form #dot {
+  padding: 0rem 0.5rem;
+  text-align: center;
+  font-weight: bolder;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+#shortUrl,
+#cpy,
+#dot {
+  margin: 0.2rem;
+  box-shadow: 2px 2px 2px black;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=landing-page.component.css.map */

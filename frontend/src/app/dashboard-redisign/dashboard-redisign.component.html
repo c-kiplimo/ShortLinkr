@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+<body>
+  <div class="container">
+    <div class="left-modal">
+      <div class="logo">
+        <h2 style="font-size:large; text-align:center; letter-spacing:2px">LOGO</h2>
+      </div>
+      <div class="links">
+              <span><a href="#Dashboard"><i class="bi bi-file-bar-graph"></i> Dashboard</a></span>
+
+              <span ><a  class="active"href="#links"><i class="bi bi-link"></i> Links</a></span>
+
+              <a href="#Microsite"><i class="bi bi-file-earmark-text"></i> Microsite</a>
+
+              <a href="#Campaigns"><i class="bi bi-folder"></i> Campaigns</a>
+
+              <a href="#Custom-links"><i class="bi bi-link-45deg"></i> Custom links</a>
+              <hr>
+              <a href="#Settings"><i class="bi bi-gear"></i>   Settings</a>
+      </div>
+
+      <div class="logout">
+        <button style="border:none; background:none;" (click)="logout()"><i class="bi bi-box-arrow-left"></i> Logout</button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="dashboard">
+        <div class="logo">
+          <h1 style="font-size:large; font-weight:bold;">URL SHORTENER</h1>
+        </div>
+        <div class="nav">
+          <span><i class="bi bi-gear"></i></span>
+          <span><i class="bi bi-bell"></i></span>
+
+          <img src="../../assets/images/instaprofpic3.jpg" alt="profile">
+
+          <span>Maxbert <i class="bi bi-caret-down-fill"></i></span>
+
+        </div>
+      </div>
+      <div class="bdy">
+        <div class="left">
+          <div class="filt">
+            <h2 style="font-size: large;">Performance</h2>
+            <div class="filter">
+              <input type="radio" name="filter">Date Created
+              <input type="radio" name="filter"> Top performing
+              <select name="filter" id="">
+                <option value="Yearly">Yearly</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Daily">Daily</option>
+              </select>
+            </div>
+          </div>
+          <!--Statistics-->
+          <div class="stats">
+            <div class="clicks">
+              <div style="background-color:rgb(3, 87, 255)"  class="icon"><i  style="color: white; font-size: 1.5rem; margin:15px 10px" class="bi bi-bar-chart-line-fill"></i></div>
+              <div class="info">
+                  <span>Total Clicks</span>
+                  <br>
+                  <span>2,280</span>
+              </div>
+            </div>
+            <div class="channel">
+              <div  style="background-color: rgb(3, 87, 255)" class="icon"><i  style="color: white; font-size: 1.5rem; margin:15px 10px" class="bi bi-envelope"></i></div>
+              <div class="info">
+                  <span>Email, SMS, Direct</span>
+                  <br>
+                  <span>1,756</span>
+              </div>
+            </div>
+          </div>
+
+        <!--graph section-->
+
+        <div class="graph-sec">
+          <canvas id="myChart"></canvas>
+           <button id="hide-btn">Hide Chart <i class="bi bi-chevron-up"></i></button>
+        </div>
+
+        <!--Engagement section-->
+        <div class="link-stats">
+          <div class="tile">
+            <h2>ENGAGMENT ALL TIME</h2>
+            <h3>2 Result</h3>
+          </div>
+          <div class="link-stat">
+            <div class="url">
+              <h2 style="font-size:large"><span style="color:rgb(3, 87, 255);">short</span>.link/InvoiceLandingPage</h2>
+              <div class="icons">
+                <div class="icon1"><i class="bi bi-pencil-square"></i></div>
+                <div class="icon2"><i class="bi bi-send"></i></div>
+              </div>
+            </div>
+            <h3 style="font-size:large">https://dribble.com/shots/19953199-Justadmin-Finance-SaaS-Hero</h3>
+            <hr>
+            <h4 style="font-size:large">012 Dec 12:06</h4>
+          </div>
+
+          <div class="link-stat">
+            <div class="url">
+              <h2 style="font-size:large"><span style="color:rgb(3, 87, 255);">short</span>.link/InvoiceLandingPage</h2>
+              <div class="icons">
+                <div class="icon1"><i class="bi bi-pencil-square"></i></div>
+                <div class="icon2"> <i class="bi bi-send"></i></div>
+              </div>
+            </div>
+            <h3 style="font-size:large">https://dribble.com/shots/19953199-Justadmin-Finance-SaaS-Hero</h3>
+            <hr>
+            <h4 style="font-size:large">012 Dec 12:06</h4>
+          </div>
+
+        </div>
+        </div>
+        <div class="right">
+          <div class="right-tile1">
+              <span style="font-size:30px; font-weight:bolder;">Create New Link <i class="bi bi-link-45deg"></i> </span>
+              <br>
+              <span>create, short and manage your links</span>
+              <input type="text" name="longUrl" [(ngModel)]="longUrl" (keyup.enter)="createShortLink()">
+              <button (click)="createShortLink()" [disabled]="!longUrl">Create Link <i class="bi bi-arrow-right"></i></button>
+              <!-- <button>Create Link -> </button> -->
+          </div>
+          <hr>
+          <div class="right-tile2">
+            <h1 style="font-size: large;font-weight:bolder">CUSTOM YOUR LINK</h1>
+            <div class="ad">
+
+            </div>
+            <div class="custom-link">
+              <!-- <h3 style="font-size: large;"> <i class="bi bi-link"></i>  <span>short</span>.link/maltumator</h3> -->
+              <h3 style="font-size: large;"> <i class="bi bi-link"></i>  {{shortUrl}}</h3>
+              <!-- <h3>{{shortUrl}}</h3> -->
+              <div>
+                <button (click)="copyShortenedLink()">Copy</button>
+              </div>
+            </div>
+          </div>
+          <div class="right-tile3">
+            <div class="heading">
+              <h2>QRCODE</h2>
+              <button>DOWNLOAD PNG</button>
+            </div>
+            <div class="qr-section">
+              <div class="qrcode">
+                <i  style="font-size: 10rem;  padding:0; position:absolute; top: 42rem; left: 56rem;" class="bi bi-qr-code"></i>
+              </div>
+              <div class="qr-text">
+                <h3 style="font-size: large;"><i class="bi bi-link"></i> https://dribble.com/maltumator</h3>
+                <h4 style="font-size: large;"><i class="bi bi-calendar4-week"></i> 22 December 2022</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<script src="https://cdnjsdelivr.net/npm/chart.js"></script>

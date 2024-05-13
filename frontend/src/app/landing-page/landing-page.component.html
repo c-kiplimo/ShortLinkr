@@ -1,0 +1,108 @@
+Html
+<!-- <header style="background:whitesmoke">
+  <div class="wrapper">
+      <div class="container">
+        <div class="logo"></div>
+      </div>
+  </div>
+
+</header> -->
+<!-- <hr> -->
+<!-- landing-page.component.html -->
+<!-- <div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to Linkify</h1>
+    <p class="lead">Shorten your links with ease</p>
+    <hr class="my-4">
+    <form>
+      <div class="form-group">
+        <label for="longUrl">Enter your long URL</label>
+        <input type="text" class="form-control" id="longUrl" [(ngModel)]="longUrl" name="longUrl">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="shortenUrl()">Shorten</button>
+    </form>
+    <hr class="my-4">
+    <div *ngIf="shortUrl">
+      <p>Your shortened URL:</p>
+      <a [href]="shortUrl">{{ shortUrl }}</a>
+    </div>
+  </div>
+</div>  -->
+
+ <div class="land-cont">
+  <div class="dash-cont">
+    <div class="logo">
+      <p> <a href="">LINKIFY</a> </p>
+    </div>
+    <div class="nav">
+      <ol>
+        <li>MyUrls</li>
+        <li>Features</li>
+        <li>About</li>
+        <li><button routerLink="/register">Get Started</button> </li>
+      </ol>
+    </div>
+
+  </div>
+  <div class="bdy">
+    <div class="left">
+      <div class="text">
+        <p>A simple link <br> but a powerful tool<br> for <span>sms marketing</span></p>
+      </div>
+      <div class="form-cont">
+        <form>
+          <div class="form-group">
+            <label for="InputURL"><i class="bi bi-link-45deg"></i><i class="bi bi-link-45deg"></i>Enter your long URL
+              here</label>
+            <input type="email" class="form-control" id="InputURL" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="linkCustom"><i class="bi bi-link-45deg"></i>Customize your link</label>
+            <input type="text" class="form-control"  id="linkCustom">
+          </div>
+        </form>
+        <div class="btn-cont">
+
+          <button style="margin-top:20px;" (click)="openModal(content)">Linkify</button>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="right">
+      <img src="../../assets/images/undraw_link_shortener_mvf6.svg" alt="LINKIFY URL SHORTENER">
+    </div>
+   
+  </div>
+
+</div> -->
+
+
+<!--Modal component-->
+<div class="modal">
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Your shortened Lin.ke URL:</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+
+    <div class="modal-body">
+      <form>
+        <div class="form-group modal-form">
+
+          <input type="email" class="form-control" id="shortUrl" placeholder="https://www.sharemylink.com"
+            aria-describedby="emailHelp">
+          <button id="cpy">copy</button>
+          <button id="dot">...</button>
+        </div>
+
+      </form>
+    </div>
+    <div class="btn-cont">
+      <p>My Urls</p>
+      <div class="vl"></div>
+      <button style="padding:10px 10px;">Detailed Stats</button>
+    </div>
+
+  </ng-template>
+</div>

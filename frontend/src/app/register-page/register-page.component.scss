@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@500&family=Roboto:wght@100&display=swap');
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+// /* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+// .logo{
+//   padding-top: 1rem;
+//   font-family: 'Monoton', cursive;
+// }
+
+.logo {
+  height: 41px;
+  position: absolute;
+  left: 35px;
+  top: 10px;
+  // top: 55px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 41px;
+  padding-bottom: 50px;
+}
+
+.cont{
+  height: 100vh;
+  background-color: #9B7BEF;;
+  .logo{
+    font-family: Montagu Slab;
+    margin:0rem 1rem 0rem 5rem;
+  }
+
+
+}
+.bdy{
+  display: flex;
+  justify-content: space-between;
+  position:absolute;
+  top: 89px;
+}
+.form-cont{
+  display: inline-block;
+  margin-left: 10rem;
+  margin-top: 0rem;
+  display: inline-block;
+  background-color: #FFFF;
+  padding: 1rem 4rem 1rem 2.5rem;
+  border-radius: 12px;
+  height: 85vh;
+
+
+
+}
+form .form-group{
+  margin-bottom: .7rem;
+}
+input{
+  width: 18rem;
+}
+input::placeholder{
+  font-size:13px;
+}
+.image{
+  // display: inline-block;
+  position:absolute;
+  left: 731px;
+
+  img{
+    margin-top: 10rem;
+    margin-right: 9rem;
+    width: 30rem;
+    left: 731px;
+    top: 283px;
+  }
+}
+
+form .btn{
+  background-color: black;
+  color: white;
+  padding: .5rem 7rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/*icons styling*/
+.icon1{
+  position: absolute;
+  cursor: pointer;
+  left: 28rem;
+  top: 20rem;
+}
+

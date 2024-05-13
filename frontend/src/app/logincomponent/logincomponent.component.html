@@ -1,0 +1,63 @@
+<div class="cont">
+  <div class="logo">
+    <a class="navbar-brand" routerLink=""> LINKIFY </a>
+  </div>
+
+  <div>
+    <div class="bdy">
+      <div class="form-cont">
+        <p style="font-family: poppins">Welcome !</p>
+
+        <p>
+          <b style="font-size: 31px">Signup to Linkify</b><br />
+          <span>An african first URL shortener</span>
+        </p>
+
+        <form [formGroup]="loginForm">
+          <div class="form-group">
+            <label for="email" class="label-name">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email1"
+              aria-describedby="emailHelp"
+              placeholder="Enter  your username"
+              formControlName="email"
+            />
+          </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input [type]="change?'password' : 'text'" class="form-control" id="password" placeholder="Enter your password"
+                  formControlName="password" />
+                <i (click)="showpass()" [ngClass]="visible?'icon1 bi bi-eye-fill':'icon1 bi bi-eye-slash-fill'"></i>
+
+              </div>
+          <div class="form-group">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            &nbsp;
+            <label class="form-check-label" for="exampleCheck1"
+              >Remember me
+            </label>
+            <!-- <i class="icon2 bi bi-eye-fill"></i>
+          <i class="icon2 bi bi-eye-slash-fill"></i> -->
+            <!-- <i class=" icon2 bi bi-eye-fill"></i> <i class="icon2 bi bi-eye-slash-fill"></i> -->
+          </div>
+          <button type="login" class="btn btn-primary" (click)="onSubmit()">
+            Login
+          </button>
+          <p style="margin-left: 2rem">
+            Dont have an account?
+            <a style="text-decoration: none" routerLink="/register" routerLinkActive="active">Register</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="image">
+      <img src="../../assets/images/image.svg" alt="Welcome" />
+    </div>
+  </div>
+</div>
